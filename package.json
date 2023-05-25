@@ -37,6 +37,7 @@
     "sucrase": "^3.30.0",
     "swc": "^1.0.11",
     "swc-loader": "^0.2.3",
+    "sweetalert2": "^11.7.3",
     "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",

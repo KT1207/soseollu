@@ -1,37 +1,41 @@
-import { count } from "console";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
 const LogoContainer = styled.div`
   width: 100%;
   height: 100%;
-  padding-left: 10rem;
+  margin-left: 10rem;
   font-family: "S-Core Dream";
   font-style: normal;
   font-weight: 550;
   font-size: 48px;
-  line-height: 67px;
+  padding-top: 3%;
 `;
 const NavContainer = styled.div`
-  width: 100%;
-  height: 10%;
+  width: 150vw;
+  height: 10vh;
   display: flex;
   position: fixed;
-  margin-top: 2rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  // background-color: black;
 `;
 const FontContainer = styled.div`
+  min-width: 3vw;
   width: 100%;
-  height: 100%;
   margin: 0;
+  margin-top: 30%;
   font-family: "S-Core Dream";
   font-style: normal;
   font-weight: 501;
-  font-size: 36px;
-  line-height: 67px;
+  font-size: 24px;
+  line-height: 100%;
   color: #444444;
   text-transform: uppercase;
+
   :after {
     display: block;
     content: "";
-    border-bottom: solid 3px #400000;
+    padding-top: 5%;
+    border-bottom: solid 3px #222222;
     transform: scaleX(0);
     transition: transform 200ms ease-in-out;
   }
@@ -43,21 +47,29 @@ const FontContainer = styled.div`
     color: #222222;
   }
 `;
+const NovelFontContainer = styled(FontContainer)`
+  min-width: 3rem;
+  margin-top: 45%;
+  margin-left: 3%;
+`;
+
 const NovelImg = styled.img`
-  width: 4.5rem;
-  height: 5rem;
-  margin-top: -0.4rem;
-  margin-left: -0.5rem;
+  width: 3.5rem;
+  height: 4rem;
+  margin-top: 1%;
+  margin-left: 0.5%;
 `;
 const NovelBigContainer = styled.div`
+  height: auto;
   margin-left: 5rem;
-  display: flex;
   padding-top: 0.3rem;
+  display: flex;
 `;
 
 const WriteNovelImg = styled.img`
-  width: 4rem;
-  height: 4rem;
+  width: 3.3rem;
+  height: 3rem;
+  padding-top: 5%;
 `;
 const LogoBigContainer = styled.div``;
 
@@ -65,8 +77,8 @@ const LoginContainer = styled.div``;
 
 const LoginBigContainer = styled.div`
   height: 40%;
-  margin-top: 1rem;
-  margin-left: 45%;
+  margin-top: 0.6rem;
+  margin-left: 34%;
   padding-top: 0.8rem;
   padding-left: 0.8rem;
   padding-right: 0.5%;
@@ -74,9 +86,10 @@ const LoginBigContainer = styled.div`
 `;
 
 const WriteBigContainer = styled.div`
+  height: auto;
   margin-left: 2.5rem;
-  display: flex;
   padding-top: 0.3rem;
+  display: flex;
 `;
 const LoginFountContainer = styled.div`
   width: 100px;
@@ -114,7 +127,6 @@ const RegisterFountContainer = styled.div`
   height: 100%;
   margin: 0;
   padding: 0;
-
   padding-left: 1rem;
   padding-right: 1rem;
   font-family: "S-Core Dream";
@@ -140,10 +152,13 @@ const RegisterFountContainer = styled.div`
 `;
 const RegisterBigContainer = styled.div`
   height: 50%;
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: 0.8rem;
+  padding-top: 0.6rem;
   background-color: #555;
   border-radius: 15px;
+  text-justify: auto;
+  text-align: center;
+  line-height: 250%;
 `;
 const WriteContainer = styled.div``;
 
@@ -186,6 +201,7 @@ const LoginTitleContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  overflow: hidden;
 `;
 const LoginInput = styled.input`
   margin-left: auto;
@@ -222,6 +238,16 @@ const CloseImg = styled.img`
 const LoginInputContainer = styled.div`
   margin-top: 5%;
 `;
+const SelectWriteFontWrapper = styled.div``;
+const SelectWriteFontConatainer = styled.div`
+  width: 80%;
+  height: 100%;
+  margin-left: 15%;
+  text-align: center;
+  margin-top: 3%;
+  display: flex;
+`;
+
 const LoginForm = styled.form``;
 export {
   LoginFormConatiner,
@@ -250,4 +276,7 @@ export {
   RegisterFountContainer,
   LoginModalButton,
   LoginForm,
+  SelectWriteFontConatainer,
+  SelectWriteFontWrapper,
+  NovelFontContainer,
 };

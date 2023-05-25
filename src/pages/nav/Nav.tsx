@@ -1,20 +1,16 @@
-import React from "react";
+import React, { memo } from "react";
 import { Link } from "react-router-dom";
 
 import LOGIN from "../../type/login.type";
-import Loginnav from "./Loginnav";
+import Loginnav from "../../components/login/Login";
 import {
   FontContainer,
-  LoginBigContainer,
-  LoginButton,
-  LoginFountContainer,
   LogoBigContainer,
   LogoContainer,
   NavContainer,
   NovelBigContainer,
+  NovelFontContainer,
   NovelImg,
-  RegisterBigContainer,
-  RegisterFountContainer,
   WriteBigContainer,
   WriteNovelImg,
 } from "./Nav.styled";
@@ -26,34 +22,38 @@ const Nav = () => {
   return (
     <NavContainer>
       <LogoBigContainer>
-        <Link
-          to="../main"
-          style={{
-            textDecoration: "inherit",
-            color: "inherit",
-          }}
-        >
-          <LogoContainer>소설루</LogoContainer>
-        </Link>
+        <LogoContainer>
+          <Link
+            to="../main"
+            style={{
+              textDecoration: "inherit",
+              color: "inherit",
+            }}
+          >
+            소설루
+          </Link>
+        </LogoContainer>
       </LogoBigContainer>
 
       <NovelBigContainer>
-        <Label htmlFor="linkNovel"></Label>
         <NovelImg src="Images/Novelimg.png"></NovelImg>
-        <Link
-          to="../novels"
-          style={{
-            textDecoration: "inherit",
-            color: "inherit",
-          }}
-          id="linkNovel"
-        >
-          <FontContainer>소설</FontContainer>
-        </Link>
+        <Label>
+          <Link
+            to="../novels"
+            style={{
+              textDecoration: "inherit",
+              color: "inherit",
+            }}
+            id="linkNovel"
+          >
+            <NovelFontContainer>소설</NovelFontContainer>
+          </Link> 
+        </Label>
       </NovelBigContainer>
 
       <WriteBigContainer>
         <WriteNovelImg src="Images/Writenovel.png"></WriteNovelImg>
+
         <Label>
           <Link
             to="../write"
@@ -71,4 +71,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default memo(Nav);
