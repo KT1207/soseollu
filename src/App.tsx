@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main from "./pages/main/main";
-import LOGIN from "./type/login.type";
+import LOGIN from "../src/type/login.type";
 import Modal from "react-modal";
 import Workroom from "./pages/Workroom/Workroom";
 import Novel from "./pages/novels/Novel";

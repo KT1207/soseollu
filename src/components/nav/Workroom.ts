@@ -1,9 +1,7 @@
 import axios from "axios";
-import { deflate } from "zlib";
-
 const myNovels = () => {
   axios
-    .get("http://localhost:9090")
+    .get("http://localhost:8001/")
     .then((res) => {
       console.log(res.data.data);
       console.log(res.data);

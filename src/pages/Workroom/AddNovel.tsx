@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useCallback, useRef, useState } from "react";
-
+import Swal from "sweetalert2";
 const AddNovel = () => {
   console.log("addNovel");
   const cols: number = 50;
@@ -53,8 +53,23 @@ const AddNovel = () => {
             "Content-Type": "multipart/form-data",
           },
         })
-        .then((result) => console.log("result"))
-        .catch((err) => console.log(err));
+        .then((result) => {
+          Swal.fire({
+            title: "새로운 소설을 만들었네요!",
+            text: "늘 성실하게 연재 해주세요!",
+            icon: "success",
+          }).then((ss: any) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (ss.isConfirmed) {
+              window.location.href = "../";
+            }
+          });
+        })
+        .catch((err: any) => {
+          console.log(err.response.data);
+          console.error(err.response.status);
+          Swal.fire("이미존재하는 제목입니다", "", "error");
+        });
     } else {
       console.log("Fuck");
       console.log(NovelImageRef.current.value);
