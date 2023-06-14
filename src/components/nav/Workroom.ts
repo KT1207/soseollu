@@ -3,12 +3,13 @@ const myNovels = () => {
   axios
     .get("http://localhost:8001/")
     .then((res) => {
-      console.log(res.data.data);
       console.log(res.data);
-      if (res.data.data === (null || undefined)) {
-        return null;
+      console.log(res.data);
+
+      if (res.data === (null || undefined)) {
+        return "mynovelsfail";
       }
-      return res.data.data;
+      return res.data;
     })
     .catch((err) => {
       console.log("Err " + err);

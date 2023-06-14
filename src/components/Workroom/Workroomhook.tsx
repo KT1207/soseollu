@@ -1,4 +1,4 @@
-import React, { Children } from "react";
+import React, { Children, useEffect, useState } from "react";
 import {
   MyNovelsContainer,
   NewNovelBtnContainer,
@@ -11,17 +11,23 @@ import { myNovels } from "../nav/Workroom";
 import { Link } from "react-router-dom";
 
 const Workroomhook = () => {
-  const data: any = myNovels();
+  let data: any;
+  const Data: void = useEffect(() => {
+    data = myNovels();
+    console.log("1" + data);
+    return data;
+  }, [3000]);
 
-  if (data === (null || undefined)) {
-    console.log("data :" + data);
+  if (data === "mynovelsfail") {
     return (
       <WorkroomALLContainer>
         <div>
           <Nav />
         </div>
         <NovelTabContainer>
+          {data}
           <MyNovelsContainer>내 작품</MyNovelsContainer>
+
           <NewNovelContainer>
             <Link
               to={"./newNovel"}
@@ -37,6 +43,9 @@ const Workroomhook = () => {
       </WorkroomALLContainer>
     );
   } else {
+    console.log("data :" + data);
+    const help = Data;
+    console.log("help" + help);
     return (
       <WorkroomALLContainer>
         <div>
@@ -44,14 +53,14 @@ const Workroomhook = () => {
         </div>
         <NovelTabContainer>
           <MyNovelsContainer>내 작품</MyNovelsContainer>
-          <>
-            {data.map((v) => {
-              return <div>{v}</div>;
-            })}
-          </>
-          <Link to="/newNovel">
+          <Link to="/write/newNovel">
             <NewNovelContainer>
               <NewNovelBtnContainer>신규작품 등록</NewNovelBtnContainer>
+            </NewNovelContainer>
+          </Link>
+          <Link to="/write/newNovelImg">
+            <NewNovelContainer>
+              <NewNovelBtnContainer>배너 신청</NewNovelBtnContainer>
             </NewNovelContainer>
           </Link>
         </NovelTabContainer>
